@@ -33,4 +33,4 @@ jobs:
           fail-on-alert: true
           alert-comment-cc-users: '@CherylTo'
       - name: View results
-        run: echo "You can view results here"
+        run: echo "You can view results here https://cherylto.github.io/benchmark-test/dev/bench/"
