@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1602813518411,
+  "lastUpdate": 1602814131299,
   "repoUrl": "https://github.com/CherylTo/benchmark-test",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
@@ -54,6 +54,33 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 3.791078804282393e-7",
             "extra": "mean: 167.5978205705732 nsec\nrounds: 196079"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "CherylTo",
+            "username": "CherylTo"
+          },
+          "committer": {
+            "name": "CherylTo",
+            "username": "CherylTo"
+          },
+          "id": "830729a2a83baf237c405695918a8521150117f9",
+          "message": "Create main.yml",
+          "timestamp": "2020-10-16T01:51:50Z",
+          "url": "https://github.com/CherylTo/benchmark-test/pull/1/commits/830729a2a83baf237c405695918a8521150117f9"
+        },
+        "date": 1602814130646,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "bench.py::test_bench",
+            "value": 5796595.727066033,
+            "unit": "iter/sec",
+            "range": "stddev: 3.790630774966465e-7",
+            "extra": "mean: 172.51504970935173 nsec\nrounds: 52908"
           }
         ]
       }
