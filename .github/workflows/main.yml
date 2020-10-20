@@ -50,4 +50,4 @@ jobs:
           
       - name: Move data
         run: |
-          mv "*.json" benchmarks/
+          mv *.json benchmarks/
