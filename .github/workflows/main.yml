@@ -35,7 +35,7 @@ jobs:
           ref: benchmark
       - uses: actions/download-artifact@v2
         with:
-          name: my-artifact
+          name: benchmarks/my-artifact
       - name: Display structure of downloaded files
         run: ls -R
         
