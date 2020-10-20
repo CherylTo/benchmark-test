@@ -1,0 +1,69 @@
+{
+    "machine_info": {
+        "node": "fv-az40",
+        "processor": "x86_64",
+        "machine": "x86_64",
+        "python_compiler": "GCC 7.5.0",
+        "python_implementation": "CPython",
+        "python_implementation_version": "3.9.0",
+        "python_version": "3.9.0",
+        "python_build": [
+            "default",
+            "Oct  6 2020 11:05:56"
+        ],
+        "release": "5.4.0-1026-azure",
+        "system": "Linux",
+        "cpu": {
+            "vendor_id": "GenuineIntel",
+            "hardware": "unknown",
+            "brand": "Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz"
+        }
+    },
+    "commit_info": {
+        "id": "6fac9d62b37edbbcc1351f475aca65023214094d",
+        "time": "2020-10-20T18:05:47+00:00",
+        "author_time": "2020-10-20T18:05:47+00:00",
+        "dirty": false,
+        "project": "benchmark-test",
+        "branch": "(detached head)"
+    },
+    "benchmarks": [
+        {
+            "group": null,
+            "name": "test_bench",
+            "fullname": "bench.py::test_bench",
+            "params": null,
+            "param": null,
+            "extra_info": {},
+            "options": {
+                "disable_gc": false,
+                "timer": "perf_counter",
+                "min_rounds": 5,
+                "max_time": 1.0,
+                "min_time": 5e-06,
+                "warmup": false
+            },
+            "stats": {
+                "min": 1.3448275847716513e-07,
+                "max": 1.4655172415994708e-06,
+                "mean": 1.6693653810332042e-07,
+                "stddev": 2.9479062225016316e-08,
+                "rounds": 200000,
+                "median": 1.6896551701079416e-07,
+                "iqr": 1.3793103609463419e-08,
+                "q1": 1.5862068954871134e-07,
+                "q3": 1.7241379315817476e-07,
+                "iqr_outliers": 1349,
+                "stddev_outliers": 1349,
+                "outliers": "1349;1349",
+                "ld15iqr": 1.3793103413451623e-07,
+                "hd15iqr": 1.96551724229721e-07,
+                "ops": 5990300.334255589,
+                "total": 0.033387307620671054,
+                "iterations": 29
+            }
+        }
+    ],
+    "datetime": "2020-10-20T18:35:15.918104",
+    "version": "3.2.2"
+}
