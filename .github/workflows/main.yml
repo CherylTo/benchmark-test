@@ -35,7 +35,7 @@ jobs:
           ref: benchmark
       - uses: actions/download-artifact@v2
         with:
-          name: benchmarks/my-artifact
+          name: my-artifact
       - name: Display structure of downloaded files
         run: ls -R
         
@@ -47,4 +47,3 @@ jobs:
           git add '*.json'
           git commit -m "benchmark results"
           git push origin HEAD:benchmark
-
