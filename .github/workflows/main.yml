@@ -20,7 +20,7 @@ jobs:
           pytest bench.py --benchmark-autosave
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git pull origin CherylTo-patch-1
+          git pull origin CherylTo-patch-1 --allow-unrelated-histories
           git add .
           git commit -m "generated"
           git push origin HEAD:CherylTo-patch-1
