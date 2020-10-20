@@ -47,4 +47,4 @@ jobs:
           git add '*.json'
           git commit -m "benchmark results"
           git push origin HEAD:benchmark
-          mv *.json benchmarks/*.json
+          mv *.json benchmarks/
