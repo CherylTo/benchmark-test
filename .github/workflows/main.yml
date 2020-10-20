@@ -37,7 +37,7 @@ jobs:
 #           # Show alert with commit comment on detecting possible performance regression
 #           alert-threshold: '200%'
 #           comment-on-alert: true
-          fail-on-alert: true
-          alert-comment-cc-users: '@CherylTo'
-      - name: View results
-        run: echo "You can view results here https://cherylto.github.io/benchmark-test/dev/bench/"
+#           fail-on-alert: true
+#           alert-comment-cc-users: '@CherylTo'
+#       - name: View results
+#         run: echo "You can view results here https://cherylto.github.io/benchmark-test/dev/bench/"
