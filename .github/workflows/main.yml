@@ -33,9 +33,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: benchmark
-      - name: cd
-        run: |
-          cd benckmarks
       - uses: actions/download-artifact@v2
         with:
           name: my-artifact
@@ -52,5 +49,6 @@ jobs:
           git push origin HEAD:benchmark
           
       - name: Move data
+      - shell: bash
         run: |
           mv *.json benchmarks/
