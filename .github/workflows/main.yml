@@ -38,6 +38,11 @@ jobs:
           name: my-artifact
       - name: Display structure of downloaded files
         run: ls -R
+      
+      - name: Mkdir
+        run: |
+          mkdir benchmark_tests
+          cd benchmark_tests
         
       - name: Store data
         run: |
