@@ -47,10 +47,4 @@ jobs:
           git add '*.json'
           git commit -m "benchmark results"
           git push origin HEAD:benchmark
-      
-      - uses: actions/checkout@v2
-        with:
-          ref: benchmark
-      - name: Move data
-        run: |
-          mv *.json benchmarks/
+
