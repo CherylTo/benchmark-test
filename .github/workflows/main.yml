@@ -38,18 +38,16 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: my-artifact
-          path: benchmarks/*.json
       - name: Display structure of downloaded files
         run: |
           ls -R
-          pwd
         
-#       - name: Store data
-#         run: |
-#           git config user.name github-actions
-#           git config user.email github-actions@github.com
-#           git pull origin benchmark --allow-unrelated-histories
-#           git add '*.json'
-#           git commit -m "benchmark results"
-#           git push origin HEAD:benchmark
-#           mv *.json benchmarks/
+      - name: Store data
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git pull origin benchmark --allow-unrelated-histories
+          git add '*.json'
+          git commit -m "benchmark results"
+          git push origin HEAD:benchmark
+
