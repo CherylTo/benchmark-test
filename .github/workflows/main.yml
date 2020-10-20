@@ -37,6 +37,7 @@ jobs:
           ref: benchmark
       - uses: actions/download-artifact@v2
         with:
+          name: my-artifact
           path: benchmarks
       - name: Display structure of downloaded files
         run: |
