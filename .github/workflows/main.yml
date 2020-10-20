@@ -17,19 +17,26 @@ jobs:
       - name: Run benchmark
         run: |
           pip install -q -r requirements.txt
-          pytest bench.py --benchmark-json output.json
-      - name: Store benchmark result
-        uses: rhysd/github-action-benchmark@v1
-        with:
-          name: Python Benchmark with pytest-benchmark
-          tool: 'pytest'
-          output-file-path: output.json
-          # Use personal access token instead of GITHUB_TOKEN due to https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/false
-          github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          auto-push: true
-          # Show alert with commit comment on detecting possible performance regression
-          alert-threshold: '200%'
-          comment-on-alert: true
+          pytest bench.py --benchmark-autosave
+          cd .benchmark
+          pwd
+          
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: my-artifact
+#           path: 
+#       - name: Store benchmark result
+#         uses: rhysd/github-action-benchmark@v1
+#         with:
+#           name: Python Benchmark with pytest-benchmark
+#           tool: 'pytest'
+#           output-file-path: output.json
+#           # Use personal access token instead of GITHUB_TOKEN due to https://github.community/t5/GitHub-Actions/Github-action-not-triggering-gh-pages-upon-push/td-p/26869/highlight/false
+#           github-token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+#           auto-push: true
+#           # Show alert with commit comment on detecting possible performance regression
+#           alert-threshold: '200%'
+#           comment-on-alert: true
           fail-on-alert: true
           alert-comment-cc-users: '@CherylTo'
       - name: View results
