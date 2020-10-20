@@ -47,8 +47,4 @@ jobs:
           git add '*.json'
           git commit -m "benchmark results"
           git push origin HEAD:benchmark
-          
-      - name: Move data
-      - shell: bash
-        run: |
-          mv *.json benchmarks/
+
