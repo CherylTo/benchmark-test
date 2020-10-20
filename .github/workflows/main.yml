@@ -18,6 +18,8 @@ jobs:
         run: |
           pip install -q -r requirements.txt
           pytest bench.py --benchmark-autosave
+      - name: Store result
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git pull origin CherylTo-patch-1 --allow-unrelated-histories
