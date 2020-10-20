@@ -32,15 +32,15 @@ jobs:
         
       - uses: actions/checkout@v2
         with:
-          ref: main
+          ref: benchmark
       - name: Store data
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git pull origin CherylTo-patch-1 --allow-unrelated-histories
+          git pull origin benchmark --allow-unrelated-histories
           git add '*.json'
           git commit -m "benchmark results"
-          git push origin HEAD:main
+          git push origin HEAD:benchmark
 
 
 
