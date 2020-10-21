@@ -1,5 +1,6 @@
 import pytest
 import json
+import time
 
 def add(a, b):
     return a+b
@@ -14,5 +15,6 @@ def test_bench():
         "add": [{"a": 1, "b": 2, "add": sum}],
 	"multiply": [{"a": 2, "b": 3, "multiply": product}]
     }
-    with open('test.json', 'w') as file:
+    file_name = str(int(time.time()))+'_test.json'
+    with open(file_name, 'w') as file:
         json.dump(data, file)
