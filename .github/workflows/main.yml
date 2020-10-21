@@ -22,7 +22,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: accuracy-test
+          name: test.json
           path: ./
 
       - uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
           ref: benchmark
       - uses: actions/download-artifact@v2
         with:
-          name: accuracy-test
+          name: test.json
           path: accuracy_tests
       - name: Display structure of downloaded files
         run: |
