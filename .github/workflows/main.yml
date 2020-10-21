@@ -41,7 +41,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git pull origin benchmark --allow-unrelated-histories
-          git add './accuracy_tests/*.json'
+          git add ./accuracy_tests/*.json
           git commit -m "benchmark results"
           git push origin HEAD:benchmark
       # - uses: actions/checkout@v2
