@@ -13,7 +13,7 @@ def test_bench():
     product = multiply(2, 3)
     ts = str(int(time.time()))
     data = {
-        "time": time.time
+        "time": time.time,
         "add": [{"a": 1, "b": 2, "add": sum}],
 	    "multiply": [{"a": 2, "b": 3, "multiply": product}]
     }
