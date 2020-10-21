@@ -76,11 +76,11 @@ jobs:
       #   run: |
       #     ls -R
 
-      - name: Store data
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git pull origin benchmark --allow-unrelated-histories
-          git add '*.json'
-          git commit -m "benchmark results"
-          git push origin HEAD:benchmark
+#       - name: Store data
+#         run: |
+#           git config user.name github-actions
+#           git config user.email github-actions@github.com
+#           git pull origin benchmark --allow-unrelated-histories
+#           git add '*.json'
+#           git commit -m "benchmark results"
+#           git push origin HEAD:benchmark
