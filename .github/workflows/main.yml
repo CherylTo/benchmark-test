@@ -14,41 +14,73 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v1
-      - name: Run benchmark # files are saved here .benchmarks/Linux-CPython-3.9-64bit/
+      - name: Run benchmark
         run: |
-          pip install -q -r requirements.txt
-          pytest bench.py --benchmark-autosave
-          cd .benchmarks/Linux-CPython-3.9-64bit/
-          ls -a
-          
+          pip install pytest
+          pytest bench.py
+          ls
+
       - uses: actions/upload-artifact@v2
         with:
-          name: my-artifact
-          path: .benchmarks/Linux-CPython-3.9-64bit/
-          
-#       - uses: actions/download-artifact@v2
-#         with:
-#           name: my-artifact
-#       - name: Display structure of downloaded files
-#         run: ls -R
-        
+          name: accuracy-test
+          path: ./
+
       - uses: actions/checkout@v2
         with:
           ref: benchmark
       - uses: actions/download-artifact@v2
         with:
-          name: my-artifact
-          path: benchmarks
+          name: accuracy-test
+          path: accuracy_tests
       - name: Display structure of downloaded files
         run: |
           ls -R
-        
+
       - name: Store data
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git pull origin benchmark --allow-unrelated-histories
-          git add '*.json'
+          git add ./accuracy_tests/*.json
           git commit -m "benchmark results"
           git push origin HEAD:benchmark
+      # - uses: actions/checkout@v2
+      # - uses: actions/setup-python@v1
+      # - name: Run benchmark # files are saved here .benchmarks/Linux-CPython-3.9-64bit/
+      #   run: |
+      #     pip install -q -r requirements.txt
+      #     pytest bench.py --benchmark-autosave
+      #     cd .benchmarks/Linux-CPython-3.9-64bit/
+      #     ls -a
 
+      #
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path: .benchmarks/Linux-CPython-3.9-64bit/
+
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: my-artifact
+      # - name: Display structure of downloaded files
+      #   run: ls -R
+
+      # - uses: actions/checkout@v2
+      #   with:
+      #     ref: benchmark
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path: benchmarks
+      # - name: Display structure of downloaded files
+      #   run: |
+      #     ls -R
+
+      # - name: Store data
+      #   run: |
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+      #     git pull origin benchmark --allow-unrelated-histories
+      #     git add '*.json'
+      #     git commit -m "benchmark results"
+      #     git push origin HEAD:benchmark
