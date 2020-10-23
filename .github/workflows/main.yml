@@ -45,13 +45,14 @@ jobs:
 
       - name: test update json
         run: |
+          cid=$(git rev-parse --short HEAD)
           echo $(cat accuracy_tests/test.json | jq --arg commit_id $cid '. + {commit_id: $commit_id}') > accuracy_tests/test.json
 
-      - name: Store data
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git pull origin benchmark --allow-unrelated-histories
-          git add '*.json'
-          git commit -m "benchmark results"
-          git push origin HEAD:benchmark
+#       - name: Store data
+#         run: |
+#           git config user.name github-actions
+#           git config user.email github-actions@github.com
+#           git pull origin benchmark --allow-unrelated-histories
+#           git add '*.json'
+#           git commit -m "benchmark results"
+#           git push origin HEAD:benchmark
