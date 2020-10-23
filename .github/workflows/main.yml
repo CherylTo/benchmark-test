@@ -42,9 +42,6 @@ jobs:
       - name: Display structure of downloaded files
         run: |
           ls -R
-      - name: test update json
-        run: |
-          echo $(cat accuracy_tests/test.json | jq --arg commit_id $cid '. + {commit_id: $commit_id}') > accuracy_tests/test.json
 
       - name: Store data
         run: |
