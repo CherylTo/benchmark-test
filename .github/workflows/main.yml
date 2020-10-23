@@ -43,6 +43,12 @@ jobs:
         run: |
           ls -R
 
+      - name: test update json
+        run: |
+          cid=$(git rev-parse --short HEAD)
+          echo $(cat accuracy_tests/test.json | jq --arg commit_id $cid '. + {commit_id: $commit_id}')
+          echo $(cat accuracy_tests/test.json | jq --arg commit_id $cid '. + {commit_id: $commit_id}') > accuracy_tests/test.json
+
       - name: Store data
         run: |
           git config user.name github-actions
